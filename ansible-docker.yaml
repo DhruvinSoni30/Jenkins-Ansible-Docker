@@ -2,6 +2,10 @@
 - hosts: dev
   become: True
   tasks:
+    - name: Install Python Pip
+      yum:
+        name: python-pip
+        state: present
     - name: Install Docker
       yum:
         name: docker
