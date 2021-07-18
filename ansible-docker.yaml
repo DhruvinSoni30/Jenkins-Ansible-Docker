@@ -1,0 +1,12 @@
+---
+- hosts: dev
+  become: True
+  tasks:
+    - name: Start the container
+       docker_container:
+         name: dhruvinapp
+         image: "dhruvin30/ansibleweb:${DOCKER_TAG}"
+         state: started
+         published_ports:
+           - 0.0.0.0:80:80
+ 
